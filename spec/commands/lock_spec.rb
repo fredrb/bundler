@@ -51,6 +51,9 @@ describe "bundle lock" do
         rails
         with_license
 
+      RUBY VERSION
+         #{Bundler::RubyVersion.system}
+
       BUNDLED WITH
          #{Bundler::VERSION}
     L
@@ -59,7 +62,7 @@ describe "bundle lock" do
   it "prints a lockfile when there is no existing lockfile with --print" do
     bundle "lock --print"
 
-    expect(out).to include(@lockfile)
+    expect(out).to eq(@lockfile)
   end
 
   it "prints a lockfile when there is an existing lockfile with --print" do
@@ -193,6 +196,9 @@ describe "bundle lock" do
         gssapi
         mixlib-shellout
 
+      RUBY VERSION
+         #{Bundler::RubyVersion.system}
+
       BUNDLED WITH
          #{Bundler::VERSION}
     G
@@ -220,6 +226,9 @@ describe "bundle lock" do
       DEPENDENCIES
         gssapi
         mixlib-shellout
+
+      RUBY VERSION
+         #{Bundler::RubyVersion.system}
 
       BUNDLED WITH
          #{Bundler::VERSION}
